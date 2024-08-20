@@ -6,44 +6,23 @@ using namespace std;
 #define ff1(n) for(int i=1; i<n; i++)
 #define ll long long
 
+int n;
+
+
 void solve(){
-    int n;
-    cin>>n;
-   
-    vector<int> a(n);
+     cin>>n;
 
-    int i=1;
-    int j;
+     if(n==1) cout<<1<<endl;
+     else if(n<=3) cout<<"NO SOLUTION"<<endl;
+     else{
+        for(int i=2; i<=n; i+=2)
+           cout<<i<<" ";
+        for(int i=1; i<=n; i+=2){
+            cout<<i<<" ";
+        }   cout<<endl;
+     }
 
-    if(n%2==0){
-       j = n;  
-    }else{
-        j = n-1;
-    }
 
-    bool f = true;
-
-    for(int k=0; k<n; k++){
-          if(f){
-             a[k] = i;
-             i++;
-          }else{
-             a[k] = j;
-             j--;
-          }
-
-          f =!f;
-    }
-
-    if(n%2!=0){
-         int mid = (0+n)/2;
-         a[mid] = n;
-
-    }
-
-    ff(n) cout<<a[i]<<" ";
-
-    cout<<endl;
 }
 
 signed main(){
